@@ -81,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (confirmTransferBtn) {
         confirmTransferBtn.addEventListener('click', function() {
             const transferKey = document.getElementById('transferKey').value;
-            if (!transferKey) {
-                alert('Please enter the transfer key');
+            
+            // Check if transfer key is correct (must be 654321)
+            if (transferKey !== '654321') {
+                alert('Invalid transfer key. Please enter the correct 6-digit code.');
                 return;
             }
             
